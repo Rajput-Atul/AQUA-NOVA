@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://aqua-nova.vercel.app/sitemap.xml
+Sitemap: https://aqua-nova-theta.vercel.app/sitemap.xml

@@ -4,7 +4,7 @@ A lightweight, frontend-only showcase for customized clear PET water bottles and
 
 ## Run locally
 
-Open `index.html` in a browser, or serve this folder with any static file server. Vercel rewrites `/c/:slug` to the app entry point so the sample customer routes work on direct visits and refreshes.
+Open `index.html` in a browser, or serve this folder with any static file server. Vercel rewrites `/c/:slug` to the app entry point so the sample customer routes work on direct visits and refreshes. The production site is available at [aqua-nova-theta.vercel.app](https://aqua-nova-theta.vercel.app).
 
 ## Included
 
