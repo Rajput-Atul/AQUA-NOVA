@@ -1,24 +1,36 @@
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "919324596287";
+const OWNER_NAME = "Atul Chauhan";
+const OWNER_PHONE = "+91 93245 96287";
+const OWNER_EMAIL = "atulchauhan223222@gmail.com";
 const CUSTOMER_PATH = "/c/";
 
+const photoAssets = [
+  { file: "main-hero.jpg", alt: "Aqua Nova clear branded water bottle with a QR label beside a customer experience on a phone", note: "A bottle that connects", ratio: 1.23, labels: [] },
+  { file: "main-qr-scene.jpg", alt: "Aqua Nova bottle with a printed QR label and water splash", note: "One scan, a digital welcome", ratio: 1.63, labels: [] },
+  { file: "main-industry-cards.jpg", alt: "Industry experiences from the Aqua Nova visual reference", note: "Made for every kind of business", ratio: 3.7, labels: [] },
+  { file: "main-customer-pages.jpg", alt: "Example customer pages from the Aqua Nova visual reference", note: "A page made for your brand", ratio: 3.27, labels: [] },
+  { file: "main-cta-scene.jpg", alt: "A branded Aqua Nova bottle in a water-inspired setting", note: "Your brand, in every hand", ratio: 2.9, labels: [] },
+  { file: "shrishti-hero.jpg", alt: "Shrishti Solutions furniture and aluminium business reference page", note: "Shrishti Solutions", ratio: 2.56, labels: [] }
+];
+
 const products = [
-  { size: "250 ml", title: "The petite", detail: "A considered little refreshment for welcome desks, events and thoughtful guest touches.", label: "Blue / minimal", style: "aqua", note: "Ideal for welcome moments" },
-  { size: "500 ml", title: "The everyday", detail: "A versatile canvas for your brand, from the meeting table to the restaurant table.", label: "Custom / QR-ready", style: "corporate", note: "A versatile favourite" },
-  { size: "1 litre", title: "The generous", detail: "A larger clear bottle for longer gatherings, hospitality and sharing the good stuff.", label: "Premium / custom", style: "black", note: "Made for longer moments" }
+  { size: "250 ml", title: "The petite", detail: "A considered little refreshment for welcome desks, events and thoughtful guest touches.", label: "Blue / minimal", photo: 0, note: "Ideal for welcome moments" },
+  { size: "500 ml", title: "The everyday", detail: "A versatile canvas for your brand, from the meeting table to the restaurant table.", label: "Custom / QR-ready", photo: 1, note: "A versatile favourite" },
+  { size: "1 litre", title: "The generous", detail: "A larger clear bottle for longer gatherings, hospitality and sharing the good stuff.", label: "Premium / custom", photo: 4, note: "Made for longer moments" }
 ];
 
 const concepts = [
-  ["Quiet luxury", "Minimal luxury", "black", "500 ml", "A confident mark with a little gold."],
-  ["The welcome", "Hotel & hospitality", "hotel", "500 ml", "A considered first impression."],
-  ["Table stories", "Restaurant", "restaurant", "500 ml", "Your restaurant, at every seat."],
-  ["Coffee break", "Cafe", "cafe", "250 ml", "A fresh detail for your next cup."],
-  ["The celebration", "Wedding", "wedding", "250 ml", "A little keepsake for the day."],
-  ["Together, better", "Corporate", "corporate", "500 ml", "Your identity, clearly present."],
-  ["In session", "Conference", "event", "500 ml", "A useful detail between talks."],
-  ["Move well", "Fitness & gym", "fitness", "1 litre", "Keep your community in motion."],
-  ["Modern classic", "Blue & white", "aqua", "500 ml", "Fresh, clear and unmistakably yours."],
-  ["The big moment", "Event branding", "promotional", "1 litre", "Made for a moment worth sharing."],
-  ["Your next idea", "Made to order", "custom", "500 ml", "A starting point for your own story."]
+  ["Quiet luxury", "Minimal luxury", "500 ml", "A confident mark with a little gold.", "gold"],
+  ["The welcome", "Hotel & hospitality", "500 ml", "A considered first impression.", "hotel"],
+  ["Table stories", "Restaurant", "500 ml", "Your restaurant, at every seat.", "restaurant"],
+  ["Coffee break", "Cafe", "250 ml", "A fresh detail for your next cup.", "cafe"],
+  ["The celebration", "Wedding", "250 ml", "A little keepsake for the day.", "wedding"],
+  ["Together, better", "Corporate", "500 ml", "Your identity, clearly present.", "corporate"],
+  ["In session", "Conference", "500 ml", "A useful detail between talks.", "event"],
+  ["Move well", "Fitness & gym", "1 litre", "Keep your community in motion.", "fitness"],
+  ["Modern classic", "Blue & white", "500 ml", "Fresh, clear and unmistakably yours.", "aqua"],
+  ["The big moment", "Event branding", "1 litre", "Made for a moment worth sharing.", "launch"],
+  ["Your next idea", "Made to order", "500 ml", "A starting point for your own story.", "custom"]
 ];
 
 const industries = [
@@ -40,7 +52,7 @@ const customers = [
     intro: "Shrishti Solutions helps teams bring ideas into focus with practical, people-first support. This sample page shows how a branded bottle can lead to a useful digital introduction.",
     story: "A clear introduction, built around the people and ideas behind the business. Use this page to share the services you offer, tell your story and make the next step easy for a customer.",
     highlights: ["People-first approach", "Solutions shaped around you", "A direct line to the team"],
-    style: "corporate", color: "#183f48", accent: "#b3e8d5", label: "A clearer way forward",
+    style: "corporate", color: "#183f48", accent: "#b3e8d5", label: "A clearer way forward", photo: 5,
     services: [["Business consulting", "Practical thinking to help teams move forward."], ["Digital solutions", "Useful, considered tools built around real needs."], ["Team support", "A collaborative partner from first conversation to next step."]],
     address: "Business details can be added here", city: "Customer information"
   },
@@ -50,7 +62,7 @@ const customers = [
     intro: "Take a seat at Bluebird Cafe. Browse a little menu of cafe favourites, find something that sounds good and say hello to the team.",
     story: "A neighbourhood cafe for slow mornings, coffee breaks and one more thing from the pastry case. This sample menu demonstrates how a QR label can open directly onto a mobile-friendly cafe experience.",
     highlights: ["Freshly made favourites", "Coffee for the moment", "A warm neighbourhood welcome"],
-    style: "cafe", color: "#334c3f", accent: "#e6ce9f", label: "A little neighborhood pause",
+    style: "cafe", color: "#334c3f", accent: "#e6ce9f", label: "A little neighborhood pause", photo: 3,
     address: "Cafe address can be added here", city: "Customer information"
   },
   {
@@ -59,7 +71,7 @@ const customers = [
     intro: "Welcome to Summit 2027. Find the day’s programme, gather with people who see the world differently and take the next big idea with you.",
     story: "A meeting place for bright ideas and meaningful conversations. This sample event page puts essential information and a programme in one easy-to-find place.",
     highlights: ["Ideas worth sharing", "People who move things forward", "A day to look ahead"],
-    style: "event", color: "#343d59", accent: "#d8d0ff", label: "Meet us at the summit",
+    style: "event", color: "#343d59", accent: "#d8d0ff", label: "Meet us at the summit", photo: 2,
     address: "Venue details can be added here", city: "Customer information"
   }
 ];
@@ -304,6 +316,65 @@ function bottleArtwork(style = "aqua", size = "500 ml", includeQr = true, labelT
   </svg>`;
 }
 
+const labelThemes = [
+  ["#f1eee5", "#bd995d", "#153a40"],
+  ["#eff6f2", "#2c8a83", "#143b41"],
+  ["#f0e9dd", "#92764d", "#53432e"],
+  ["#f7f1e8", "#a76d56", "#624134"],
+  ["#e8f1ed", "#477e77", "#183c43"]
+];
+
+function photoUrl(index) {
+  return `/assets/reference/${encodeURIComponent(photoAssets[index].file)}`;
+}
+
+function photoLabels(photo, index) {
+  const [background, accent, ink] = labelThemes[index % labelThemes.length];
+  return photo.labels.map((label, labelIndex) => `<span class="photo-label photo-label-${labelIndex + 1}" style="--label-x:${label.x}%;--label-y:${label.y}%;--label-w:${label.w}%;--label-bg:${background};--label-accent:${accent};--label-ink:${ink}">
+    <span class="label-copy"><span class="label-brand">AQUA NOVA</span><strong>${escapeHtml(label.text)}</strong><small>YOUR BRAND · YOUR STORY</small></span>
+    <span class="label-qr" aria-hidden="true"></span>
+  </span>`).join("");
+}
+
+function photoFrame(index, options = {}) {
+  const photo = photoAssets[index];
+  const overlays = options.labels === false ? "" : photoLabels(photo, index);
+  const badge = options.badge ? `<span class="photo-badge">${escapeHtml(options.badge)}</span>` : "";
+  const caption = options.caption ? `<span class="photo-caption">${escapeHtml(photo.note)}</span>` : "";
+  const className = options.className ? ` ${options.className}` : "";
+  return `<div class="photo-frame${className}" data-photo-index="${index}" style="--photo-ratio:${photo.ratio}">
+    ${badge}
+    <div class="photo-media"><img src="${photoUrl(index)}" alt="${escapeHtml(options.alt || photo.alt)}" loading="${options.eager ? "eager" : "lazy"}">${overlays}</div>
+    ${caption}
+  </div>`;
+}
+
+function mountQrLabels() {
+  const qr = qrCodePath(`${window.location.origin}${CUSTOMER_PATH}shrishti-solutions`);
+  document.querySelectorAll(".label-qr").forEach((container) => {
+    if (!container.childElementCount) container.innerHTML = qr;
+  });
+}
+
+function fitPhotoMedia() {
+  document.querySelectorAll(".photo-media").forEach((media) => {
+    const stage = media.closest(".photo-frame, .hero-photo-stage");
+    const image = media.querySelector("img");
+    if (!stage || !image || !image.naturalWidth || !image.naturalHeight) return;
+    const stageWidth = stage.clientWidth;
+    const stageHeight = stage.clientHeight;
+    const ratio = image.naturalWidth / image.naturalHeight;
+    let width = stageWidth;
+    let height = width / ratio;
+    if (height > stageHeight) {
+      height = stageHeight;
+      width = height * ratio;
+    }
+    media.style.width = `${width}px`;
+    media.style.height = `${height}px`;
+  });
+}
+
 function foodArtwork(index) {
   const palettes = [
     ["#e0ab57", "#6f8a50"], ["#f3c27b", "#b74735"], ["#e6c690", "#6a8761"],
@@ -321,7 +392,7 @@ function customerCard(customer) {
   };
   return `<article class="customer-card" style="--customer-bg:${backgrounds[customer.slug]}">
     <span class="customer-brand">${escapeHtml(customer.type)}</span>
-    <div class="customer-art">${bottleArtwork(customer.style, "500 ml", true, customer.label, customer.slug)}</div>
+    <div class="customer-art">${photoFrame(customer.photo, { alt: `${customer.name} customer bottle label concept`, className: "photo-frame-customer" })}</div>
     <h3>${escapeHtml(customer.name)}</h3>
     <p>${escapeHtml(customer.oneLiner)}</p>
     <a href="${CUSTOMER_PATH}${customer.slug}">View customer page <span aria-hidden="true">↗</span></a>
@@ -330,13 +401,13 @@ function customerCard(customer) {
 
 function renderHeader() {
   const root = document.getElementById("site-header");
-  root.innerHTML = `<header class="site-header"><div class="header-inner">
+  root.innerHTML = `<header class="site-header"><div class="header-contact-ribbon"><span>Personalised bottles · Atul Chauhan</span><span class="ribbon-links"><a href="tel:+919324596287">${OWNER_PHONE}</a><a href="mailto:${OWNER_EMAIL}">${OWNER_EMAIL}</a></span></div><div class="header-inner">
     <a class="brand" href="/" aria-label="Aqua Nova home">
       <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3C14 12 8 18 8 26a12 12 0 0 0 24 0C32 18 26 12 20 3Z" fill="#a5e5d3"/><path d="M14 25c0 4 2.5 6 6 6" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/></svg></span>
       <span class="brand-wordmark">AQUA NOVA<small>YOUR BRAND. YOUR BOTTLE.</small></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-      <a href="/#home">Home</a><a href="/#bottles">Our bottles</a><a href="/#qr">QR experience</a><a href="/#industries">Industries</a><a href="/#work">Our work</a><a href="/#quote">Contact</a>
+      <a href="/#home">Home</a><a href="/#bottles">Our bottles</a><a href="/#qr">QR experience</a><a href="/#industries">Industries</a><a href="/#work">Our work</a><a href="/#contact">Contact</a>
       <a class="nav-cta" href="/#quote">Get a custom quote <span aria-hidden="true">↗</span></a>
     </nav>
     <a class="nav-cta" href="/#quote">Get a custom quote <span aria-hidden="true">↗</span></a>
@@ -350,7 +421,7 @@ function renderFooter() {
       <div class="footer-brand"><a class="brand" href="/" aria-label="Aqua Nova home"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3C14 12 8 18 8 26a12 12 0 0 0 24 0C32 18 26 12 20 3Z" fill="#a5e5d3"/><path d="M14 25c0 4 2.5 6 6 6" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.7"/></svg></span><span class="brand-wordmark">AQUA NOVA<small>YOUR BRAND. YOUR BOTTLE.</small></span></a><p>Clear water. Custom labels. A thoughtful digital connection, made for your brand.</p></div>
       <div class="footer-column"><h3>Discover</h3><a href="/#bottles">Our bottles</a><a href="/#concept-grid">Label concepts</a><a href="/#qr">QR experience</a><a href="/#industries">Industries</a></div>
       <div class="footer-column"><h3>Explore</h3><a href="/#work">Customer pages</a><a href="${CUSTOMER_PATH}shrishti-solutions">Shrishti Solutions</a><a href="${CUSTOMER_PATH}bluebird-cafe">Bluebird Cafe</a><a href="${CUSTOMER_PATH}summit-2027">Summit 2027</a></div>
-      <div class="footer-column"><h3>Start a conversation</h3><a href="/#quote">Request a custom quote</a><a href="#" data-whatsapp>Chat on WhatsApp ↗</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><p>Transparent PET · Custom-printed labels</p></div>
+      <div class="footer-column footer-contact"><h3>Talk to Atul</h3><p>${OWNER_NAME} · Aqua Nova</p><a href="tel:+919324596287">${OWNER_PHONE}</a><a href="mailto:${OWNER_EMAIL}">${OWNER_EMAIL}</a><a href="#" data-whatsapp>Chat on WhatsApp ↗</a><a href="https://github.com/Rajput-Atul" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><a href="https://linkedin.com/in/atul-chauhan-716991221" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a></div>
     </div>
     <div class="footer-bottom"><span>© ${new Date().getFullYear()} Aqua Nova. Your brand. Your bottle. Your experience.</span><span>Made for moments that matter.</span></div>
   </footer>`;
@@ -358,15 +429,15 @@ function renderFooter() {
 
 function renderProducts() {
   document.getElementById("product-grid").innerHTML = products.map((product) => `<article class="product-card" data-product-size="${escapeHtml(product.size)}">
-    <div class="product-visual"><span class="product-visual-tag">Clear PET · Custom label</span><div class="product-bottle">${bottleArtwork(product.style, product.size, true, product.label)}</div></div>
+    <div class="product-visual"><span class="product-visual-tag">Clear PET · Custom label</span>${photoFrame(product.photo, { alt: `${product.size} clear PET bottle photo with Aqua Nova label concept` })}</div>
     <div class="product-info"><div class="product-title-row"><h3>${escapeHtml(product.title)}</h3><span class="product-size">${escapeHtml(product.size)}</span></div><p>${escapeHtml(product.detail)}</p><div class="product-actions"><span>${escapeHtml(product.note)}</span><a href="#quote" data-quote-size="${escapeHtml(product.size)}">Get a quote <span aria-hidden="true">↗</span></a></div></div>
   </article>`).join("");
 }
 
 function renderConcepts() {
-  document.getElementById("concept-grid").innerHTML = concepts.map(([title, type, style, size, detail], i) => `<article class="concept-card" style="--concept-wash:${i % 3 === 0 ? "#dfede7" : i % 3 === 1 ? "#ede8dd" : "#e4ecec"}">
-    <span class="concept-number">A / ${String(i + 1).padStart(2, "0")}</span><span class="concept-size">${size}</span>
-    <div class="concept-art"><div class="concept-bottle">${bottleArtwork(style, size, i === 0 || i === 5 || i === 10, title.toUpperCase())}</div></div>
+  document.getElementById("concept-grid").innerHTML = concepts.map(([title, type, size, detail, theme], i) => `<article class="concept-card concept-card-label concept-${theme}">
+    <span class="concept-number">A / ${String(i + 1).padStart(2, "0")}</span><span class="concept-size">${escapeHtml(size)}</span>
+    <div class="concept-label-art" aria-hidden="true"><span>AQUA NOVA</span><strong>${escapeHtml(title)}</strong><small>YOUR BRAND · YOUR STORY</small><i>QR</i></div>
     <div class="concept-info"><span>${escapeHtml(type)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(detail)}</p></div>
   </article>`).join("");
 }
@@ -530,6 +601,70 @@ function renderCustomerPage(customer) {
   attachWhatsAppLinks();
 }
 
+function renderShrishtiReferencePage() {
+  const page = document.getElementById("customer-page");
+  document.getElementById("home-page").hidden = true;
+  document.getElementById("site-header").hidden = true;
+  document.getElementById("site-footer").hidden = true;
+  page.hidden = false;
+  page.className = "shrishti-reference-page";
+  document.body.classList.add("is-shrishti-reference");
+  document.title = "Shrishti Solutions | Furniture & Aluminium Works";
+  document.querySelector('meta[name="description"]').content =
+    "Shrishti Solutions in Ambernath, Maharashtra — custom furniture, aluminium works, interior solutions and large projects.";
+
+  const mapUrl = "https://www.google.com/maps/search/?api=1&query=Shrishti+Solutions+Ambernath+Maharashtra";
+  const reviewUrl = "https://www.google.com/maps/search/?api=1&query=Shrishti+Solutions+Ambernath+Maharashtra";
+  page.innerHTML = `<figure class="shrishti-reference">
+    <img src="/assets/reference/shrishti-reference.jpg" alt="Shrishti Solutions reference page: premium furniture and aluminium works in Ambernath, featuring services, project gallery, business contact and map." fetchpriority="high">
+    <a class="shrishti-hotspot shrishti-hotspot-top" href="tel:+919022288367" aria-label="Call Shrishti Solutions at 90222 88367"></a>
+    <a class="shrishti-hotspot shrishti-hotspot-call" href="tel:+919022288367" aria-label="Call Shrishti Solutions at 90222 88367"></a>
+    <a class="shrishti-hotspot shrishti-hotspot-whatsapp" href="https://wa.me/919022288367" target="_blank" rel="noopener noreferrer" aria-label="Message Shrishti Solutions on WhatsApp"></a>
+    <a class="shrishti-hotspot shrishti-hotspot-map" href="${mapUrl}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Shrishti Solutions in Ambernath"></a>
+    <a class="shrishti-hotspot shrishti-hotspot-review" href="${reviewUrl}" target="_blank" rel="noopener noreferrer" aria-label="Find Shrishti Solutions on Google"></a>
+    <figcaption class="sr-only">Shrishti Solutions — Build, Design, Transform. Custom furniture, aluminium fabrication and installation, commercial and residential projects, and quality craftsmanship. Located in Ambernath, Maharashtra. Contact Narendra Chauhan at 90222 88367.</figcaption>
+  </figure>
+  <div class="sr-only" id="shrishti-contact"><h1>Shrishti Solutions</h1><p>Premium furniture work, aluminium works and large projects in Ambernath, Maharashtra.</p><h2>Our services</h2><ul><li>Furniture work and custom designs</li><li>Aluminium windows, doors, partitions and facades</li><li>Commercial and residential large projects</li><li>Interior solutions</li></ul><p>Contact Narendra Chauhan at 90222 88367.</p></div>`;
+}
+
+function renderMainReferencePage() {
+  const page = document.getElementById("home-page");
+  document.getElementById("site-header").hidden = true;
+  document.getElementById("site-footer").hidden = true;
+  document.getElementById("customer-page").hidden = true;
+  page.hidden = false;
+  page.innerHTML = `<figure class="main-reference">
+    <img src="/assets/reference/aqua-nova-reference.jpg" alt="The complete Aqua Nova website reference: custom branded water bottles, QR experiences, industries, process, examples, contact buttons and footer." fetchpriority="high">
+    <span class="main-reference-target" id="about" style="top:31%"></span>
+    <span class="main-reference-target" id="how-it-works" style="top:53%"></span>
+    <span class="main-reference-target" id="bottle-designs" style="top:21%"></span>
+    <span class="main-reference-target" id="industries" style="top:39%"></span>
+    <span class="main-reference-target" id="contact" style="top:89%"></span>
+    <a class="main-reference-hotspot main-hotspot-home" href="/" aria-label="Aqua Nova home"></a>
+    <a class="main-reference-hotspot main-hotspot-about" href="#about" aria-label="About Aqua Nova"></a>
+    <a class="main-reference-hotspot main-hotspot-how" href="#how-it-works" aria-label="How it works"></a>
+    <a class="main-reference-hotspot main-hotspot-designs" href="#bottle-designs" aria-label="Bottle designs"></a>
+    <a class="main-reference-hotspot main-hotspot-industries" href="#industries" aria-label="Industries served"></a>
+    <a class="main-reference-hotspot main-hotspot-contact" href="mailto:${OWNER_EMAIL}" aria-label="Email ${OWNER_NAME} at ${OWNER_EMAIL}"></a>
+    <a class="main-reference-hotspot main-hotspot-quote" href="mailto:${OWNER_EMAIL}?subject=Aqua%20Nova%20custom%20bottle%20enquiry" aria-label="Get your custom bottles — email ${OWNER_NAME}"></a>
+    <a class="main-reference-hotspot main-hotspot-hero-quote" href="mailto:${OWNER_EMAIL}?subject=Aqua%20Nova%20custom%20bottle%20enquiry" aria-label="Get your custom bottles — email ${OWNER_NAME}"></a>
+    <a class="main-reference-hotspot main-hotspot-qr" href="/c/shrishti-solutions" aria-label="Explore the sample QR experience"></a>
+    <a class="main-reference-hotspot main-hotspot-industries-cta" href="#industries" aria-label="View all industries"></a>
+    <a class="main-reference-hotspot main-hotspot-examples" href="/c/shrishti-solutions" aria-label="View a sample customer page"></a>
+    <a class="main-reference-hotspot main-hotspot-whatsapp" href="https://wa.me/919324596287" target="_blank" rel="noopener noreferrer" aria-label="Chat with ${OWNER_NAME} on WhatsApp"></a>
+    <a class="main-reference-hotspot main-hotspot-call" href="tel:+919324596287" aria-label="Call ${OWNER_NAME} at ${OWNER_PHONE}"></a>
+    <a class="main-reference-hotspot main-hotspot-github" href="https://github.com/Rajput-Atul" target="_blank" rel="noopener noreferrer" aria-label="${OWNER_NAME} on GitHub"></a>
+    <a class="main-reference-hotspot main-hotspot-linkedin" href="https://linkedin.com/in/atul-chauhan-716991221" target="_blank" rel="noopener noreferrer" aria-label="${OWNER_NAME} on LinkedIn"></a>
+    <figcaption class="sr-only">Aqua Nova — Scan, Connect, Grow. Atul Chauhan creates customized water bottle branding and QR experiences. Call or WhatsApp ${OWNER_PHONE}; email ${OWNER_EMAIL}. GitHub: Rajput-Atul. LinkedIn: Atul Chauhan.</figcaption>
+  </figure>`;
+  document.body.classList.add("is-main-reference");
+  document.title = "Aqua Nova — Scan · Connect · Grow";
+  document.querySelector('meta[name="theme-color"]').content = "#020d1b";
+  document.querySelector('meta[name="description"]').content =
+    "Aqua Nova custom water bottle branding and QR experiences. Contact Atul Chauhan by phone, email, GitHub or LinkedIn.";
+  document.querySelector('meta[property="og:image"]').content = "/assets/reference/aqua-nova-reference.jpg";
+}
+
 function menuCard(item, index) {
   const [category, name, description, price, dietary] = item;
   return `<article class="menu-card" data-menu-item="${escapeHtml(category)}"><div class="food-art">${foodImage(index)}</div><div><h3>${escapeHtml(name)}</h3><p>${escapeHtml(description)}</p><span class="dietary${dietary === "nonveg" ? " nonveg" : ""}" aria-label="${dietary === "veg" ? "Vegetarian" : "Non-vegetarian"}">${dietary === "veg" ? "VEG" : "NON-VEG"}</span><span class="menu-price">${escapeHtml(price)}</span></div></article>`;
@@ -570,25 +705,37 @@ function renderNotFound() {
   document.title = "Page not found | Aqua Nova";
 }
 
+function mountPhotoSlots() {
+  document.querySelectorAll("[data-photo-slot]").forEach((slot) => {
+    slot.innerHTML = photoFrame(Number(slot.dataset.photoSlot), { className: "slot-photo" });
+  });
+}
+
+function observePhotos() {
+  document.querySelectorAll(".photo-media img").forEach((image) => {
+    image.addEventListener("load", fitPhotoMedia, { once: true });
+  });
+  window.addEventListener("resize", fitPhotoMedia, { passive: true });
+  requestAnimationFrame(fitPhotoMedia);
+}
+
 function start() {
   renderHeader();
   renderFooter();
   attachMobileNavigation();
+  mountPhotoSlots();
+  mountQrLabels();
+  observePhotos();
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path.startsWith(CUSTOMER_PATH)) {
     const slug = path.slice(CUSTOMER_PATH.length).split("/")[0];
     const customer = customers.find((item) => item.slug === slug);
-    if (customer) renderCustomerPage(customer);
+    if (slug === "shrishti-solutions") renderShrishtiReferencePage();
+    else if (customer) renderCustomerPage(customer);
     else renderNotFound();
     return;
   }
-  renderProducts();
-  renderConcepts();
-  renderIndustries();
-  renderCustomers();
-  attachQuoteForm();
-  attachSizeFilters();
-  attachWhatsAppLinks();
+  renderMainReferencePage();
 }
 
 document.addEventListener("DOMContentLoaded", start);
