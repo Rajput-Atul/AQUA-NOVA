@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <rect width="80" height="80" rx="24" fill="#123d45"/>
+  <path d="M40 11C31 25 21 34 21 47a19 19 0 0 0 38 0C59 34 49 25 40 11Z" fill="#8fe0cc"/>
+  <path d="M31 47c0 6 4 10 9 10" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+  <text x="100" y="39" fill="#143d44" font-family="Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="3">AQUA NOVA</text>
+  <text x="101" y="60" fill="#658085" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">YOUR BRAND. YOUR BOTTLE.</text>
+</svg>
