@@ -1,0 +1,21 @@
+.customer-page { padding-top: 120px; }
+.customer-header { position: relative; height: 500px; min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-white); background: linear-gradient(135deg, var(--color-deep-ocean) 0%, var(--color-ocean-blue) 50%, var(--color-aqua-blue) 100%); overflow: hidden; }
+.customer-header::before { content: ''; position: absolute; inset: 0; background: url(../assets/images/customers/bg-pattern.svg) center/cover; opacity: 0.1; }
+.customer-header-content { position: relative; z-index: 2; max-width: 800px; padding: var(--space-4xl); }
+.customer-logo { width: 80px; height: 80px; margin: 0 auto var(--space-md); background: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: var(--space-sm); box-shadow: var(--shadow-lg); }
+.customer-header-content h1 { color: var(--color-white); font-size: clamp(1.8rem, 4vw, 3rem); }
+.customer-header-content p { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; }
+.customer-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-top: var(--space-md); }
+.customer-tags span { padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; background: rgba(255, 255, 255, 0.15); color: var(--color-white); border: 1px solid rgba(255, 255, 255, 0.2); }
+
+.about { background: var(--color-white); padding: var(--space-4xl) 0; }
+.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; max-width: 1100px; margin: 0 auto; }
+.about-image { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-image img { width: 100%; height: 100%; object-fit: cover; }
+.about-text h2 { font-size: 2rem; margin-bottom: var(--space-sm); }
+.about-text p { margin-bottom: var(--space-lg); }
+.about-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+.about-highlight { display: flex; gap: var(--space-md); align-items: flex-start; }
+.about-highlight-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--gradient-ocean); color: var(--color-white); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.about-highlight h5 { font-size: 0.95rem; margin-bottom: var(--space-xs); }
+.about-highlight p { font-size: 0.85rem; color: var(--color-text-light); }

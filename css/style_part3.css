@@ -1,0 +1,39 @@
+.products { background: var(--color-off-white); }
+.products-header { text-align: center; max-width: 700px; margin: 0 auto var(--space-3xl); }
+.filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-bottom: var(--space-xl); }
+.filter-btn { padding: var(--space-sm) var(--space-lg); border: 2px solid var(--color-silver-light); border-radius: var(--radius-full); background: transparent; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; color: var(--color-text-light); cursor: pointer; transition: all var(--transition-fast); }
+.filter-btn:hover, .filter-btn.active { border-color: var(--color-ocean-blue); color: var(--color-ocean-blue); background: rgba(26, 74, 122, 0.05); }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+.product-card { background: var(--color-white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: all var(--transition-slow); cursor: pointer; }
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.product-card-img { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--color-silver); }
+.product-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+.product-card:hover .product-card-img img { transform: scale(1.05); }
+.product-card-img .size-tag { position: absolute; top: var(--space-sm); left: var(--space-sm); padding: var(--space-xs) var(--space-md); background: var(--color-white); color: var(--color-deep-ocean); font-size: 0.75rem; font-weight: 700; border-radius: var(--radius-full); box-shadow: var(--shadow-sm); }
+.product-card-img .badge-gold { position: absolute; bottom: var(--space-sm); right: var(--space-sm); padding: var(--space-xs) var(--space-md); background: var(--gradient-gold); color: var(--color-deep-ocean); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; border-radius: var(--radius-sm); }
+.product-card-body { padding: var(--space-lg); }
+.product-card-body h3 { font-size: 1.2rem; margin-bottom: var(--space-xs); }
+.product-card-body p { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: var(--space-md); }
+.product-card-body .product-details { display: flex; gap: var(--space-lg); font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-md); }
+.product-card-body .product-details span { display: flex; align-items: center; gap: var(--space-xs); }
+.product-card-body .btn { width: 100%; justify-content: center; }
+
+.concepts { background: var(--gradient-ocean); color: var(--color-white); }
+.concepts .section-label { color: var(--color-gold); }
+.concepts .section-title { color: var(--color-white); }
+.concepts .section-subtitle { color: rgba(255, 255, 255, 0.7); }
+.concept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); }
+.concept-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); padding: var(--space-xl); transition: all var(--transition-slow); position: relative; overflow: hidden; }
+.concept-card:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.15); transform: translateY(-4px); }
+.concept-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-gold-text); transform: scaleX(0); transition: transform var(--transition-slow); }
+.concept-card:hover::before { transform: scaleX(1); }
+.concept-card-img { width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-md); }
+.concept-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+.concept-card:hover .concept-card-img img { transform: scale(1.05); }
+.concept-card-body { position: relative; }
+.concept-card-body h4 { color: var(--color-white); font-size: 1.05rem; margin-bottom: var(--space-xs); }
+.concept-card-body p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-sm); }
+.concept-card-body .concept-meta { display: flex; gap: var(--space-sm); font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); margin-bottom: var(--space-sm); }
+.concept-card-body .concept-meta span { display: flex; align-items: center; gap: var(--space-xs); }
+.concept-card-body .concept-size { display: inline-block; padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; background: rgba(212, 175, 55, 0.2); color: var(--color-gold-light); letter-spacing: 1px; }
+.concept-card-body .btn { position: absolute; bottom: var(--space-lg); right: var(--space-lg); }

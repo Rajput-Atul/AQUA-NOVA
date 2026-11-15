@@ -1,0 +1,45 @@
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-silver-light); }
+::-webkit-scrollbar-thumb { background: var(--color-ocean-blue); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-deep-ocean); }
+
+@media (max-width: 1024px) {
+  .grid-4, .grid-5, .grid-6, .grid-12, .concept-grid, .how-steps, .custom-grid, .showcase-grid, .calculator-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-menu { display: none; }
+  .nav-menu.open { display: flex; }
+  .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-12, .concept-grid, .how-steps, .custom-grid, .showcase-grid, .calculator-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-visual { grid-template-columns: 1fr; height: auto; max-width: 100%; }
+  .customer-header { height: 400px; text-align: left; }
+  .customer-header-content { padding: var(--space-2xl); }
+  .hero { text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .hero-ctas { justify-content: center; }
+  .about-content { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form { grid-template-columns: 1fr; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .calculator { padding: var(--space-2xl); }
+  .reviews { padding: var(--space-2xl) 0; }
+}
+@media (max-width: 480px) {
+  .section { padding: var(--space-2xl) 0; }
+  .products-header, .menu-header { padding: 0 var(--space-md); }
+  .concept-grid { grid-template-columns: 1fr; }
+  .how-steps { grid-template-columns: 1fr; }
+  .footer { padding: var(--space-2xl) 0; }
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.animated { animation: fadeInUp 0.6s ease forwards; }
+.animated-2 { animation: fadeInUp 0.6s ease 0.1s forwards; }
+.animated-3 { animation: fadeInUp 0.6s ease 0.2s forwards; }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.spinner { width: 24px; height: 24px; border: 2px solid var(--color-silver-light); border-top-color: var(--color-gold); border-radius: 50%; animation: spin 0.8s linear infinite; }

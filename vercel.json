@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "customers/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "robots.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/c/(.+)$",
+      "headers": {
+        "Cache-Control": "s-maxage=3600, stale-while-revalidate=300"
+      }
+    },
+    {
+      "src": "^/(.*)$",
+      "headers": {
+        "Cache-Control": "s-maxage=3600, stale-while-revalidate=300"
+      }
+    },
+    {
+      "src": "^/c/(.+)$",
+      "dest": "/customers/$1.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/c/shrishti-solutions",
+      "destination": "/customers/shrishti-solutions.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/c/bluebird-cafe",
+      "destination": "/customers/bluebird-cafe.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/c/summit-2027",
+      "destination": "/customers/summit-2027.html",
+      "statusCode": 301
+    }
+  ]
+}
