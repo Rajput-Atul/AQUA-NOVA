@@ -5,18 +5,16 @@ const OWNER_EMAIL = "atulchauhan223222@gmail.com";
 const CUSTOMER_PATH = "/c/";
 
 const photoAssets = [
-  { file: "main-hero.jpg", alt: "Aqua Nova clear branded water bottle with a QR label beside a customer experience on a phone", note: "A bottle that connects", ratio: 1.23, labels: [] },
-  { file: "main-qr-scene.jpg", alt: "Aqua Nova bottle with a printed QR label and water splash", note: "One scan, a digital welcome", ratio: 1.63, labels: [] },
-  { file: "main-industry-cards.jpg", alt: "Industry experiences from the Aqua Nova visual reference", note: "Made for every kind of business", ratio: 3.7, labels: [] },
-  { file: "main-customer-pages.jpg", alt: "Example customer pages from the Aqua Nova visual reference", note: "A page made for your brand", ratio: 3.27, labels: [] },
-  { file: "main-cta-scene.jpg", alt: "A branded Aqua Nova bottle in a water-inspired setting", note: "Your brand, in every hand", ratio: 2.9, labels: [] },
-  { file: "shrishti-hero.jpg", alt: "Shrishti Solutions furniture and aluminium business reference page", note: "Shrishti Solutions", ratio: 2.56, labels: [] }
+  { file: "photos/WhatsApp Image 2026-11-16 at 3.05.25 AM.png", alt: "Aqua Nova 250 ml water bottle with a custom navy and aqua QR label", note: "A petite bottle for welcome moments", ratio: 0.747, labels: [] },
+  { file: "photos/WhatsApp Image 2026-11-16 at 3.06.42 AM.png", alt: "Aqua Nova 500 ml water bottle with a custom navy and aqua QR label", note: "A versatile everyday favourite", ratio: 0.747, labels: [] },
+  { file: "photos/WhatsApp Image 2026-11-16 at 3.06.28 AM.png", alt: "Aqua Nova one litre water bottle with a custom navy and aqua QR label", note: "A generous size for sharing", ratio: 0.747, labels: [] },
+  { file: "reference/shrishti-hero.jpg", alt: "Shrishti Solutions business website sample", note: "Shrishti Solutions", ratio: 2.56, labels: [] }
 ];
 
 const products = [
   { size: "250 ml", title: "The petite", detail: "A considered little refreshment for welcome desks, events and thoughtful guest touches.", label: "Blue / minimal", photo: 0, note: "Ideal for welcome moments" },
   { size: "500 ml", title: "The everyday", detail: "A versatile canvas for your brand, from the meeting table to the restaurant table.", label: "Custom / QR-ready", photo: 1, note: "A versatile favourite" },
-  { size: "1 litre", title: "The generous", detail: "A larger clear bottle for longer gatherings, hospitality and sharing the good stuff.", label: "Premium / custom", photo: 4, note: "Made for longer moments" }
+  { size: "1 litre", title: "The generous", detail: "A larger clear bottle for longer gatherings, hospitality and sharing the good stuff.", label: "Premium / custom", photo: 2, note: "Made for longer moments" }
 ];
 
 const concepts = [
@@ -52,7 +50,7 @@ const customers = [
     intro: "Shrishti Solutions helps teams bring ideas into focus with practical, people-first support. This sample page shows how a branded bottle can lead to a useful digital introduction.",
     story: "A clear introduction, built around the people and ideas behind the business. Use this page to share the services you offer, tell your story and make the next step easy for a customer.",
     highlights: ["People-first approach", "Solutions shaped around you", "A direct line to the team"],
-    style: "corporate", color: "#183f48", accent: "#b3e8d5", label: "A clearer way forward", photo: 5,
+    style: "corporate", color: "#183f48", accent: "#b3e8d5", label: "A clearer way forward", photo: 3,
     services: [["Business consulting", "Practical thinking to help teams move forward."], ["Digital solutions", "Useful, considered tools built around real needs."], ["Team support", "A collaborative partner from first conversation to next step."]],
     address: "Business details can be added here", city: "Customer information"
   },
@@ -62,7 +60,7 @@ const customers = [
     intro: "Take a seat at Bluebird Cafe. Browse a little menu of cafe favourites, find something that sounds good and say hello to the team.",
     story: "A neighbourhood cafe for slow mornings, coffee breaks and one more thing from the pastry case. This sample menu demonstrates how a QR label can open directly onto a mobile-friendly cafe experience.",
     highlights: ["Freshly made favourites", "Coffee for the moment", "A warm neighbourhood welcome"],
-    style: "cafe", color: "#334c3f", accent: "#e6ce9f", label: "A little neighborhood pause", photo: 3,
+    style: "cafe", color: "#334c3f", accent: "#e6ce9f", label: "A little neighborhood pause", photo: 0,
     address: "Cafe address can be added here", city: "Customer information"
   },
   {
@@ -325,7 +323,8 @@ const labelThemes = [
 ];
 
 function photoUrl(index) {
-  return `/assets/reference/${encodeURIComponent(photoAssets[index].file)}`;
+  const path = photoAssets[index].file.split("/").map(encodeURIComponent).join("/");
+  return `/assets/${path}`;
 }
 
 function photoLabels(photo, index) {

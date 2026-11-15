@@ -1016,17 +1016,17 @@ h1 em, h2 em { color: #52d8f0; font-family: var(--serif); font-style: italic; }
   --line: #ded9cc;
   --gold: #a38a50;
   --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Segoe UI Variable", "Segoe UI", Inter, system-ui, sans-serif;
   --display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --content: 1240px;
 }
 
-body { color: #262a22; background: #f5f2e9; font-size: 15px; }
+body { color: #292c23; background: #f5f2e9; font-family: var(--sans); font-size: 16px; line-height: 1.7; }
 ::selection { color: #fffdf8; background: #64704f; }
 .section-shell, .section { width: min(var(--content), calc(100% - 96px)); }
 .section-shell, .section { color: #262a22; }
 .site-header { background: rgb(248 246 239 / 95%); border-color: #e4dfd3; }
-.header-contact-ribbon { color: #d7d2c4; background: #22291f; border: 0; }
+.header-contact-ribbon { color: #e5e2d8; background: #22291f; border: 0; font-size: 11px; }
 .ribbon-links a, .main-nav a { color: #595b51; }
 .ribbon-links a:hover, .main-nav a:hover, .main-nav a:focus-visible { color: #73764e; }
 .brand-icon { background: #343c2d; border-radius: 50%; }
@@ -1036,18 +1036,19 @@ body { color: #262a22; background: #f5f2e9; font-size: 15px; }
 .nav-cta { color: #fffdf8; background: #333c2d; box-shadow: none; }
 .nav-cta:hover, .button-dark:hover { color: white; background: #4a563d; }
 .main-nav a:not(.nav-cta)::after { background: #a58d55; }
+.main-nav a { font-size: 13px; }
 .menu-toggle { border-color: #d7d2c5; }
 .menu-toggle span, .menu-toggle::before, .menu-toggle::after { background: #34382e; }
 
 h1, h2 { color: #25291f; font-family: var(--display); font-weight: 400; letter-spacing: -.05em; }
 h1 { max-width: 680px; font-size: clamp(56px, 6.8vw, 88px); line-height: .99; }
 h1 em, h2 em { color: #777451; background: none; font-family: var(--serif); font-weight: 400; -webkit-text-fill-color: currentColor; }
-.eyebrow, .hero .eyebrow { color: #7d765d; font-size: 9px; letter-spacing: .19em; }
+.eyebrow, .hero .eyebrow { color: #6a654f; font-size: 11px; letter-spacing: .15em; }
 .eyebrow-mark { background: #a38a50; box-shadow: 0 0 0 4px #ebe5d6; }
 .hero { min-height: min(780px, calc(100svh - 104px)); grid-template-columns: .92fr 1.08fr; gap: clamp(45px, 7vw, 112px); padding-top: 54px; padding-bottom: 90px; }
 .hero::before { width: 52%; background: radial-gradient(ellipse, rgb(160 146 106 / 12%), transparent 72%); }
 .hero-copy { padding: 18px 0 0; }
-.hero-description { max-width: 465px; color: #696a60; font-size: 14px; line-height: 1.95; }
+.hero-description { max-width: 465px; color: #57594f; font-size: 16px; line-height: 1.8; }
 .hero-actions { gap: 27px; }
 .button, .nav-cta { border-radius: 1px; }
 .button-dark { color: #fffdf8; background: #353d2e; box-shadow: none; }
@@ -1070,8 +1071,8 @@ h1 em, h2 em { color: #777451; background: none; font-family: var(--serif); font
 .trust-strip { color: #e9e4d8; background: #30382a; border-block: 0; }
 .trust-strip i { color: #c4ad73; }
 .section-heading h2, .quote-copy h2 { color: #292c23; font-size: clamp(45px, 5.2vw, 72px); }
-.section-intro { color: #707168; }
-.fine-print, .photo-note { color: #858478; }
+.section-intro { color: #57594f; font-size: 15px; line-height: 1.8; }
+.fine-print, .photo-note { color: #606157; font-size: 12px; line-height: 1.65; }
 .section-products { background: #f5f2e9; }
 .size-filters { gap: 9px; margin-block: 26px 24px; }
 .filter-chip { color: #68695e; background: transparent; border-color: #d8d2c4; border-radius: 1px; }
@@ -1083,7 +1084,7 @@ h1 em, h2 em { color: #777451; background: none; font-family: var(--serif); font
 .product-info { color: #292c23; }
 .product-title-row h3 { color: #282b23; font-family: var(--display); font-size: 27px; font-weight: 400; }
 .product-size { color: #82734f; }
-.product-info p { color: #74746a; }
+.product-info p { color: #5f6057; font-size: 13px; line-height: 1.65; }
 .product-actions { color: #7b7a70; border-color: #e2dccf; }
 .product-actions a { color: #68704d; }
 
@@ -1207,6 +1208,11 @@ h1 em, h2 em { color: #777451; background: none; font-family: var(--serif); font
   .main-nav a:hover { color: #73764e; }
   .menu-toggle { border-color: #d7d2c5; }
   .menu-toggle span, .menu-toggle::before, .menu-toggle::after { background: #34382e; }
+  .main-nav a { font-size: 14px; }
+  .hero-description { font-size: 15px; }
+  .section-intro { font-size: 14px; }
+  .product-info p { font-size: 12px; }
+  .concept-info p, .industry-card p { font-size: 11px; }
   .section-shell, .section { width: calc(100% - 38px); }
   .hero { min-height: auto; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 45px; }
   .hero-copy, .hero-art, .hero-photo-stage { width: 100%; min-width: 0; }
@@ -1216,4 +1222,20 @@ h1 em, h2 em { color: #777451; background: none; font-family: var(--serif); font
   .hero-caption { font-size: 8px; }
   .section { padding-block: 76px; }
   .process-section { padding-inline: 19px; }
+}
+
+.product-visual { min-height: 0; aspect-ratio: 4 / 5; }
+.photo-frame[data-photo-index="0"] .photo-media > img,
+.photo-media-hero > img {
+  clip-path: polygon(41% 7%, 59% 7%, 59% 14.2%, 61.5% 16.4%, 63.5% 18.2%, 67% 23.3%, 68.2% 25.5%, 68.2% 71.8%, 66.8% 76%, 67.8% 87.8%, 66.8% 91.7%, 64% 93.5%, 36% 93.5%, 33.2% 91.7%, 32.2% 87.8%, 33.2% 76%, 31.8% 71.8%, 31.8% 25.5%, 33% 23.3%, 36.5% 18.2%, 38.5% 16.4%, 41% 14.2%);
+}
+.photo-frame[data-photo-index="1"] .photo-media > img {
+  clip-path: polygon(40.7% 9.7%, 59.1% 9.7%, 59.1% 16.8%, 59.7% 17.8%, 62% 20%, 64.3% 23%, 65.2% 25.5%, 65.2% 27.6%, 66.2% 70.7%, 65.5% 75.5%, 66.1% 87.1%, 65.2% 91.5%, 62.8% 93.3%, 37.2% 93.3%, 34.8% 91.5%, 33.9% 87.1%, 34.5% 75.5%, 33.8% 70.7%, 34.8% 27.6%, 34.8% 25.5%, 35.7% 23%, 38% 20%, 40.3% 17.8%, 40.7% 16.8%);
+}
+.photo-frame[data-photo-index="2"] .photo-media > img {
+  clip-path: polygon(43.7% 6.8%, 57.5% 6.8%, 57.5% 15%, 59.8% 17.4%, 62.2% 20%, 65.2% 26.4%, 65.8% 28.8%, 65.8% 75.5%, 64.5% 79.8%, 66.2% 89.2%, 64.8% 92.1%, 61.8% 94.2%, 38.2% 94.2%, 35.2% 92.1%, 33.8% 89.2%, 35.5% 79.8%, 34.2% 75.5%, 34.2% 28.8%, 34.8% 26.4%, 37.8% 20%, 40.2% 17.4%, 42.5% 15%);
+}
+
+@media (max-width: 760px) {
+  .product-visual { aspect-ratio: 3 / 4; }
 }
