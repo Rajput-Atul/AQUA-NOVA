@@ -627,44 +627,6 @@ function renderShrishtiReferencePage() {
   <div class="sr-only" id="shrishti-contact"><h1>Shrishti Solutions</h1><p>Premium furniture work, aluminium works and large projects in Ambernath, Maharashtra.</p><h2>Our services</h2><ul><li>Furniture work and custom designs</li><li>Aluminium windows, doors, partitions and facades</li><li>Commercial and residential large projects</li><li>Interior solutions</li></ul><p>Contact Narendra Chauhan at 90222 88367.</p></div>`;
 }
 
-function renderMainReferencePage() {
-  const page = document.getElementById("home-page");
-  document.getElementById("site-header").hidden = true;
-  document.getElementById("site-footer").hidden = true;
-  document.getElementById("customer-page").hidden = true;
-  page.hidden = false;
-  page.innerHTML = `<figure class="main-reference">
-    <img src="/assets/reference/aqua-nova-reference.jpg" alt="The complete Aqua Nova website reference: custom branded water bottles, QR experiences, industries, process, examples, contact buttons and footer." fetchpriority="high">
-    <span class="main-reference-target" id="about" style="top:31%"></span>
-    <span class="main-reference-target" id="how-it-works" style="top:53%"></span>
-    <span class="main-reference-target" id="bottle-designs" style="top:21%"></span>
-    <span class="main-reference-target" id="industries" style="top:39%"></span>
-    <span class="main-reference-target" id="contact" style="top:89%"></span>
-    <a class="main-reference-hotspot main-hotspot-home" href="/" aria-label="Aqua Nova home"></a>
-    <a class="main-reference-hotspot main-hotspot-about" href="#about" aria-label="About Aqua Nova"></a>
-    <a class="main-reference-hotspot main-hotspot-how" href="#how-it-works" aria-label="How it works"></a>
-    <a class="main-reference-hotspot main-hotspot-designs" href="#bottle-designs" aria-label="Bottle designs"></a>
-    <a class="main-reference-hotspot main-hotspot-industries" href="#industries" aria-label="Industries served"></a>
-    <a class="main-reference-hotspot main-hotspot-contact" href="mailto:${OWNER_EMAIL}" aria-label="Email ${OWNER_NAME} at ${OWNER_EMAIL}"></a>
-    <a class="main-reference-hotspot main-hotspot-quote" href="mailto:${OWNER_EMAIL}?subject=Aqua%20Nova%20custom%20bottle%20enquiry" aria-label="Get your custom bottles — email ${OWNER_NAME}"></a>
-    <a class="main-reference-hotspot main-hotspot-hero-quote" href="mailto:${OWNER_EMAIL}?subject=Aqua%20Nova%20custom%20bottle%20enquiry" aria-label="Get your custom bottles — email ${OWNER_NAME}"></a>
-    <a class="main-reference-hotspot main-hotspot-qr" href="/c/shrishti-solutions" aria-label="Explore the sample QR experience"></a>
-    <a class="main-reference-hotspot main-hotspot-industries-cta" href="#industries" aria-label="View all industries"></a>
-    <a class="main-reference-hotspot main-hotspot-examples" href="/c/shrishti-solutions" aria-label="View a sample customer page"></a>
-    <a class="main-reference-hotspot main-hotspot-whatsapp" href="https://wa.me/919324596287" target="_blank" rel="noopener noreferrer" aria-label="Chat with ${OWNER_NAME} on WhatsApp"></a>
-    <a class="main-reference-hotspot main-hotspot-call" href="tel:+919324596287" aria-label="Call ${OWNER_NAME} at ${OWNER_PHONE}"></a>
-    <a class="main-reference-hotspot main-hotspot-github" href="https://github.com/Rajput-Atul" target="_blank" rel="noopener noreferrer" aria-label="${OWNER_NAME} on GitHub"></a>
-    <a class="main-reference-hotspot main-hotspot-linkedin" href="https://linkedin.com/in/atul-chauhan-716991221" target="_blank" rel="noopener noreferrer" aria-label="${OWNER_NAME} on LinkedIn"></a>
-    <figcaption class="sr-only">Aqua Nova — Scan, Connect, Grow. Atul Chauhan creates customized water bottle branding and QR experiences. Call or WhatsApp ${OWNER_PHONE}; email ${OWNER_EMAIL}. GitHub: Rajput-Atul. LinkedIn: Atul Chauhan.</figcaption>
-  </figure>`;
-  document.body.classList.add("is-main-reference");
-  document.title = "Aqua Nova — Scan · Connect · Grow";
-  document.querySelector('meta[name="theme-color"]').content = "#020d1b";
-  document.querySelector('meta[name="description"]').content =
-    "Aqua Nova custom water bottle branding and QR experiences. Contact Atul Chauhan by phone, email, GitHub or LinkedIn.";
-  document.querySelector('meta[property="og:image"]').content = "/assets/reference/aqua-nova-reference.jpg";
-}
-
 function menuCard(item, index) {
   const [category, name, description, price, dietary] = item;
   return `<article class="menu-card" data-menu-item="${escapeHtml(category)}"><div class="food-art">${foodImage(index)}</div><div><h3>${escapeHtml(name)}</h3><p>${escapeHtml(description)}</p><span class="dietary${dietary === "nonveg" ? " nonveg" : ""}" aria-label="${dietary === "veg" ? "Vegetarian" : "Non-vegetarian"}">${dietary === "veg" ? "VEG" : "NON-VEG"}</span><span class="menu-price">${escapeHtml(price)}</span></div></article>`;
@@ -723,9 +685,6 @@ function start() {
   renderHeader();
   renderFooter();
   attachMobileNavigation();
-  mountPhotoSlots();
-  mountQrLabels();
-  observePhotos();
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path.startsWith(CUSTOMER_PATH)) {
     const slug = path.slice(CUSTOMER_PATH.length).split("/")[0];
@@ -733,9 +692,25 @@ function start() {
     if (slug === "shrishti-solutions") renderShrishtiReferencePage();
     else if (customer) renderCustomerPage(customer);
     else renderNotFound();
+    mountPhotoSlots();
+    mountQrLabels();
+    observePhotos();
     return;
   }
-  renderMainReferencePage();
+  document.getElementById("site-header").hidden = false;
+  document.getElementById("site-footer").hidden = false;
+  document.getElementById("home-page").hidden = false;
+  document.getElementById("customer-page").hidden = true;
+  renderProducts();
+  renderConcepts();
+  renderIndustries();
+  renderCustomers();
+  attachQuoteForm();
+  attachSizeFilters();
+  attachWhatsAppLinks();
+  mountPhotoSlots();
+  mountQrLabels();
+  observePhotos();
 }
 
 document.addEventListener("DOMContentLoaded", start);
